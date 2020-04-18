@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36BE05782449C3DA00D168C6 /* Perceptron.c in Sources */ = {isa = PBXBuildFile; fileRef = 36BE05772449C3DA00D168C6 /* Perceptron.c */; };
+		36BE057C2449C5E200D168C6 /* KNN.c in Sources */ = {isa = PBXBuildFile; fileRef = 36BE057B2449C5E200D168C6 /* KNN.c */; };
 		36C3D3AD2444006000D08E2C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D3AC2444006000D08E2C /* main.c */; };
+		36C3D3BE2446F21E00D08E2C /* Sample_linear_regression.c in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D3BD2446F21E00D08E2C /* Sample_linear_regression.c */; };
+		36C3D3C62446F6C200D08E2C /* Multivariate_Linear_regression.c in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D3C52446F6C200D08E2C /* Multivariate_Linear_regression.c */; };
+		36C3D3CA244701D100D08E2C /* Read_CSV.c in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D3C9244701D100D08E2C /* Read_CSV.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +28,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36BE05762449C3DA00D168C6 /* Perceptron.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Perceptron.h; sourceTree = "<group>"; };
+		36BE05772449C3DA00D168C6 /* Perceptron.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Perceptron.c; sourceTree = "<group>"; };
+		36BE057A2449C5E200D168C6 /* KNN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNN.h; sourceTree = "<group>"; };
+		36BE057B2449C5E200D168C6 /* KNN.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = KNN.c; sourceTree = "<group>"; };
 		36C3D3A92444006000D08E2C /* Machine Learning in C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Machine Learning in C"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36C3D3AC2444006000D08E2C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		36C3D3BC2446F21E00D08E2C /* Sample_linear_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sample_linear_regression.h; sourceTree = "<group>"; };
+		36C3D3BD2446F21E00D08E2C /* Sample_linear_regression.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Sample_linear_regression.c; sourceTree = "<group>"; };
+		36C3D3C42446F6C200D08E2C /* Multivariate_Linear_regression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Multivariate_Linear_regression.h; sourceTree = "<group>"; };
+		36C3D3C52446F6C200D08E2C /* Multivariate_Linear_regression.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Multivariate_Linear_regression.c; sourceTree = "<group>"; };
+		36C3D3C8244701D100D08E2C /* Read_CSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Read_CSV.h; sourceTree = "<group>"; };
+		36C3D3C9244701D100D08E2C /* Read_CSV.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Read_CSV.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		368C4D14244858D700BCF7D2 /* Perceptron */ = {
+			isa = PBXGroup;
+			children = (
+				36BE05762449C3DA00D168C6 /* Perceptron.h */,
+				36BE05772449C3DA00D168C6 /* Perceptron.c */,
+			);
+			path = Perceptron;
+			sourceTree = "<group>";
+		};
+		36BE05792449C59800D168C6 /* K_Nearest_Neighbor */ = {
+			isa = PBXGroup;
+			children = (
+				36BE057A2449C5E200D168C6 /* KNN.h */,
+				36BE057B2449C5E200D168C6 /* KNN.c */,
+			);
+			path = K_Nearest_Neighbor;
+			sourceTree = "<group>";
+		};
 		36C3D3A02444006000D08E2C = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +91,40 @@
 			isa = PBXGroup;
 			children = (
 				36C3D3AC2444006000D08E2C /* main.c */,
+				36C3D3C7244701A900D08E2C /* CSV */,
+				36BE05792449C59800D168C6 /* K_Nearest_Neighbor */,
+				368C4D14244858D700BCF7D2 /* Perceptron */,
+				36C3D3C32446F62C00D08E2C /* Multivariate_Linear_regression */,
+				36C3D3BF2446F2FA00D08E2C /* Sample_linear_regression */,
 			);
 			path = "Machine Learning in C";
+			sourceTree = "<group>";
+		};
+		36C3D3BF2446F2FA00D08E2C /* Sample_linear_regression */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D3BC2446F21E00D08E2C /* Sample_linear_regression.h */,
+				36C3D3BD2446F21E00D08E2C /* Sample_linear_regression.c */,
+			);
+			path = Sample_linear_regression;
+			sourceTree = "<group>";
+		};
+		36C3D3C32446F62C00D08E2C /* Multivariate_Linear_regression */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D3C42446F6C200D08E2C /* Multivariate_Linear_regression.h */,
+				36C3D3C52446F6C200D08E2C /* Multivariate_Linear_regression.c */,
+			);
+			path = Multivariate_Linear_regression;
+			sourceTree = "<group>";
+		};
+		36C3D3C7244701A900D08E2C /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				36C3D3C8244701D100D08E2C /* Read_CSV.h */,
+				36C3D3C9244701D100D08E2C /* Read_CSV.c */,
+			);
+			path = CSV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -88,6 +153,9 @@
 		36C3D3A12444006000D08E2C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "赵呈亮";
 				TargetAttributes = {
@@ -120,6 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				36C3D3AD2444006000D08E2C /* main.c in Sources */,
+				36C3D3C62446F6C200D08E2C /* Multivariate_Linear_regression.c in Sources */,
+				36C3D3CA244701D100D08E2C /* Read_CSV.c in Sources */,
+				36BE057C2449C5E200D168C6 /* KNN.c in Sources */,
+				36BE05782449C3DA00D168C6 /* Perceptron.c in Sources */,
+				36C3D3BE2446F21E00D08E2C /* Sample_linear_regression.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
