@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
 ////
 ////    //printf("%f\n",31.5/2);
 //    int col_num=GetTotalColCount("/Users/zcl271828/Desktop/sonar.all-data.csv");
-//    int row_num=GetTotalLineCount("/Users/zcl271828/Desktop/sonar.all-data.csv");
+    int row_num=GetTotalLineCount("/Users/zcl271828/Desktop/sonar.all-data.csv");
 //    Two_fold_cross_validation_perceptron(value,row_num, col_num,0.01,500);
 //    //shuffle_array(value,  row_num,col_num);
     //printf("%f\n",value[10][60]);
@@ -41,8 +41,9 @@ int main(int argc, const char * argv[]) {
 //    printf("%f\n",weights[60]);
 //    printf("%f\n",perceptron_predict(value[60],weights,col_num));
      //Multi_Linear_Regression("/Users/zcl271828/Desktop/sample.csv",0.1, 1000);
-    //accuracy_perceptron(value,weights,row_num,col_num);
+    
     Perceptron("/Users/zcl271828/Desktop/sonar.all-data.csv",0.01,500);
 }
+
 
 
