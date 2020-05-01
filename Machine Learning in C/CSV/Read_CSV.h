@@ -12,9 +12,9 @@
 #include <math.h>
 #include <string.h>
 #include <stdio.h>
-#define Sample_num 1000
-#define MAX_LINE_SIZE 20480
-#define feature_num 100
+#define Sample_num 1000 //定义最大样本数 可手动修改
+#define MAX_LINE_SIZE 20480 // 定义读csv文件时一行的大小
+#define feature_num 100//定义最大feature数 可手动
 #endif /* Read_CSV_h */
 void read_csv(char *file,float value[Sample_num][feature_num]);
 int GetTotalColCount(char *file);

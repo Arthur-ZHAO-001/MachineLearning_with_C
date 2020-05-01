@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		368CDF292457F01D00538936 /* Naive_Bayes.c in Sources */ = {isa = PBXBuildFile; fileRef = 368CDF282457F01D00538936 /* Naive_Bayes.c */; };
+		368CDF2D2458572400538936 /* Learning_Vector_Quantization.c in Sources */ = {isa = PBXBuildFile; fileRef = 368CDF2C2458572400538936 /* Learning_Vector_Quantization.c */; };
 		36BE05782449C3DA00D168C6 /* Perceptron.c in Sources */ = {isa = PBXBuildFile; fileRef = 36BE05772449C3DA00D168C6 /* Perceptron.c */; };
 		36BE057C2449C5E200D168C6 /* KNN.c in Sources */ = {isa = PBXBuildFile; fileRef = 36BE057B2449C5E200D168C6 /* KNN.c */; };
 		36C3D3AD2444006000D08E2C /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 36C3D3AC2444006000D08E2C /* main.c */; };
@@ -28,6 +30,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		368CDF272457F01C00538936 /* Naive_Bayes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Naive_Bayes.h; sourceTree = "<group>"; };
+		368CDF282457F01D00538936 /* Naive_Bayes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Naive_Bayes.c; sourceTree = "<group>"; };
+		368CDF2B2458572400538936 /* Learning_Vector_Quantization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Learning_Vector_Quantization.h; sourceTree = "<group>"; };
+		368CDF2C2458572400538936 /* Learning_Vector_Quantization.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Learning_Vector_Quantization.c; sourceTree = "<group>"; };
 		36BE05762449C3DA00D168C6 /* Perceptron.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Perceptron.h; sourceTree = "<group>"; };
 		36BE05772449C3DA00D168C6 /* Perceptron.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Perceptron.c; sourceTree = "<group>"; };
 		36BE057A2449C5E200D168C6 /* KNN.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KNN.h; sourceTree = "<group>"; };
@@ -62,6 +68,24 @@
 			path = Perceptron;
 			sourceTree = "<group>";
 		};
+		368CDF262457EFEA00538936 /* Naive_Bayes */ = {
+			isa = PBXGroup;
+			children = (
+				368CDF272457F01C00538936 /* Naive_Bayes.h */,
+				368CDF282457F01D00538936 /* Naive_Bayes.c */,
+			);
+			path = Naive_Bayes;
+			sourceTree = "<group>";
+		};
+		368CDF2A24580C8F00538936 /* Learning_Vector_Quantization */ = {
+			isa = PBXGroup;
+			children = (
+				368CDF2B2458572400538936 /* Learning_Vector_Quantization.h */,
+				368CDF2C2458572400538936 /* Learning_Vector_Quantization.c */,
+			);
+			path = Learning_Vector_Quantization;
+			sourceTree = "<group>";
+		};
 		36BE05792449C59800D168C6 /* K_Nearest_Neighbor */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +117,8 @@
 				36C3D3AC2444006000D08E2C /* main.c */,
 				36C3D3C7244701A900D08E2C /* CSV */,
 				36BE05792449C59800D168C6 /* K_Nearest_Neighbor */,
+				368CDF2A24580C8F00538936 /* Learning_Vector_Quantization */,
+				368CDF262457EFEA00538936 /* Naive_Bayes */,
 				368C4D14244858D700BCF7D2 /* Perceptron */,
 				36C3D3C32446F62C00D08E2C /* Multivariate_Linear_regression */,
 				36C3D3BF2446F2FA00D08E2C /* Sample_linear_regression */,
@@ -190,9 +216,11 @@
 				36C3D3AD2444006000D08E2C /* main.c in Sources */,
 				36C3D3C62446F6C200D08E2C /* Multivariate_Linear_regression.c in Sources */,
 				36C3D3CA244701D100D08E2C /* Read_CSV.c in Sources */,
+				368CDF292457F01D00538936 /* Naive_Bayes.c in Sources */,
 				36BE057C2449C5E200D168C6 /* KNN.c in Sources */,
 				36BE05782449C3DA00D168C6 /* Perceptron.c in Sources */,
 				36C3D3BE2446F21E00D08E2C /* Sample_linear_regression.c in Sources */,
+				368CDF2D2458572400538936 /* Learning_Vector_Quantization.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

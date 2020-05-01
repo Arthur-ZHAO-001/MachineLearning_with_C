@@ -7,7 +7,22 @@
 //
 
 #include "Perceptron.h"
-float perceptron_predict(float value[feature_num],float weights[],int col_num){
+void Perceptron(char *file,float learning_rate,int n_epoch){ //算法封装 输入数据集 学习率和循环次数  打印出权重向量  及经交叉验证所得的正确率
+    
+    int col_num=GetTotalColCount(file);
+    int row_num=GetTotalLineCount(file);
+    float weights[col_num];
+
+    float value[Sample_num][feature_num];
+    read_csv(file, value);
+    printf("Take whole dataset as train set\n");
+    train_weights_perceptron(value, weights,learning_rate,n_epoch,row_num, col_num);
+    for(int k=0;k<col_num;k++){
+        printf("Weights B%d = %f\n",k,weights[k]);
+    }
+    Two_fold_cross_validation_perceptron(value,row_num,col_num,learning_rate,n_epoch);
+}
+float perceptron_predict(float value[feature_num],float weights[],int col_num){ //判断是否激活
     float activation=weights[0];
     for(int i=0;i<col_num-1;i++){
         activation+=weights[i+1]*value[i];
@@ -15,7 +30,7 @@ float perceptron_predict(float value[feature_num],float weights[],int col_num){
     return (activation>=0.0)? 1.0:0.0;
 }
 
-void train_weights(float value[Sample_num][feature_num],float weights[],float learning_rate,int n_epoch,int row_num,int col_num){
+void train_weights_perceptron(float value[Sample_num][feature_num],float weights[],float learning_rate,int n_epoch,int row_num,int col_num){ //训练算法 更新权重
     float prediction=0.0;
     float error=0.0;
     for(int n=0;n<n_epoch;n++){
@@ -38,7 +53,7 @@ void train_weights(float value[Sample_num][feature_num],float weights[],float le
    
 }
 
-float accuracy_perceptron(float test[Sample_num][feature_num],float weights[],int row_num,int col_num){
+float accuracy_perceptron(float test[Sample_num][feature_num],float weights[],int row_num,int col_num){ //输入测试集 计算正确率
     float prediction=0.0;
     int acc=0;
     for(int i =0;i<row_num;i++){
@@ -53,26 +68,8 @@ float accuracy_perceptron(float test[Sample_num][feature_num],float weights[],in
     //printf("The accuracy is %f\n",a*100);
     return a;
 }
-void Perceptron(char *file,float learning_rate,int n_epoch){
-    float weights[]={};
-    
-    float value[Sample_num][feature_num];
-    read_csv(file, value);
-    int col_num=GetTotalColCount(file);
-    int row_num=GetTotalLineCount(file);
-    Two_fold_cross_validation_perceptron(value,row_num,col_num,learning_rate,n_epoch);
-//    for(int m=0;m<col_num;m++){
-//        weights[m]=0.0;
-//    }
-    printf("Take whole dataset as train set\n");
-    train_weights(value, weights,learning_rate,n_epoch,row_num, col_num);
-    for(int k=0;k<col_num;k++){
-        printf("coefficients B%d = %f\n",k,weights[k]);
-    }
-    
-    
-}
-void Two_fold_cross_validation_perceptron(float value[Sample_num][feature_num],int row_num,int col_num,float learning_rate,int n_epoch){
+
+void Two_fold_cross_validation_perceptron(float value[Sample_num][feature_num],int row_num,int col_num,float learning_rate,int n_epoch){ //交叉验证 打印出平均正确率
     float weights_set1[feature_num];
     float weights_set2[feature_num];
     float accuracy[2];
@@ -87,19 +84,19 @@ void Two_fold_cross_validation_perceptron(float value[Sample_num][feature_num],i
             set2[i][j]=value[half+i][j];
         }//将整个数据集平分
     }
-        train_weights(set1, weights_set1, learning_rate, n_epoch, half, col_num);
+        train_weights_perceptron(set1, weights_set1, learning_rate, n_epoch, half, col_num);
        //printf(" w %f",weights_set1[0]);
         accuracy[0]=accuracy_perceptron(set2, weights_set1, half, col_num);
-        train_weights(set2, weights_set2, learning_rate, n_epoch, half, col_num);
+        train_weights_perceptron(set2, weights_set2, learning_rate, n_epoch, half, col_num);
         accuracy[1]= accuracy_perceptron(set1, weights_set2, half, col_num);
         float mean_accuracy=(accuracy[0]+accuracy[1])/2;
         printf("Mean Accuracy is %f\n",mean_accuracy*100);
     
 
 }
-void shuffle_array(float value[Sample_num][feature_num], int row_num,int col_num)
+void shuffle_array(float value[Sample_num][feature_num], int row_num,int col_num) // 同python 中 shuffle函数  随机打乱数组顺序
 {
-    unsigned int seed = 1;
+    unsigned int seed = 1; //随机数种子
     srand(seed);
     int rN1 = (rand() % row_num);
     int rN2 = (rand() % row_num);
@@ -111,7 +108,7 @@ void shuffle_array(float value[Sample_num][feature_num], int row_num,int col_num
         rN2 = (rand() % row_num);
     }
 }
-void exchange_array(float a[], float b[],int col_num)
+void exchange_array(float a[], float b[],int col_num) //交换两个一维数组的值
 {
     for(int i=0;i<col_num;i++){
     float t;

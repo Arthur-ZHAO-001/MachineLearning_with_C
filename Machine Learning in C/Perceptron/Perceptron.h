@@ -16,7 +16,7 @@
 #include "Read_CSV.h"
 #endif /* Perceptron_h */
 float perceptron_predict(float value[feature_num],float weights[],int col_num);
-void train_weights(float value[Sample_num][feature_num],float weights[],float learning_rate,int n_epoch,int row_num,int col_num);
+void train_weights_perceptron(float value[Sample_num][feature_num],float weights[],float learning_rate,int n_epoch,int row_num,int col_num);
 float accuracy_perceptron(float test[Sample_num][feature_num],float weights[],int row_num,int col_num);
 void Perceptron(char *file,float learning_rate,int n_epoch);
 void exchange_array(float a[], float b[],int col_num);
